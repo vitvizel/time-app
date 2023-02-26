@@ -2,7 +2,7 @@
 pipeline {
     agent none
     stages {
-        stage('Front-end') {
+        stage('Front-end') 
             agent {
                 docker { image 'vitvizel/time-app-frontend-dev:2.0.0' }
           
