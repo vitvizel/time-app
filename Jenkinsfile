@@ -1,7 +1,7 @@
 stage('Build docker compose up') {
    steps {
-       bat '''
+       bat 
             docker-compose up -f docker-compose.yml
-       '''
+       
    }
 }
