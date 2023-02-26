@@ -1,6 +1,6 @@
 stage('Build docker compose up') {
    steps {
-       sh '''
+       bat '''
             docker-compose up -f docker-compose.pub.yml
        '''
    }
