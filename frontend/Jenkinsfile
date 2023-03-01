@@ -1,15 +1,15 @@
-//Jenkinsfile (Declarative Pipeline)
+//Jenkinsfile Frontend (Declarative Pipeline)
 pipeline {
-    agent {
-        docker {
-            image 'vitvizel/time-app-frontend-dev:2.0.0'
-        }
-    }
-    stages {
-        stage('Front-end') {
-           
-        
-          
+    agent any
+
+    stages [
+        stages('Build Frontend'){
+            steps {
+            withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {    
+
+                bat "docker build . -t frontend"
             }
+
         }
-    }
+           
+    ]
