@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     stages {
-        stages('Build Frontend'){
+        stage('Build Frontend'){
             steps {
             withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {    
 
