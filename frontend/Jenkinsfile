@@ -7,7 +7,7 @@ pipeline {
             steps {
             withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {    
 
-                bat "docker build . -t frontend"
+                sh "docker build . -t frontend"
             }
 
         }
