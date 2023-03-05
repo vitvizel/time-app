@@ -1,6 +1,6 @@
 //Jenkinsfile Frontend (Declarative Pipeline)
 pipeline {
-    agent any
+    agent docker
 
     stages {
         stage('Build Frontend'){
