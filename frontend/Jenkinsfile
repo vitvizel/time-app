@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Build Frontend'){
             steps {
-            withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {    
+          //  withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {    
 
                 bat "docker build -f Dockerfile -t frontend ."
             }
