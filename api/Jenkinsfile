@@ -1,0 +1,30 @@
+//Jenkinsfile Backend (Declarative Pipeline)
+pipeline {
+    agent any
+
+    options {
+                buildDiscarder(logRotator(daysToKeepStr: '30'))
+                disableConcurrentBuilds()
+                timestamps()
+                timeout(time: 20, unit: 'MINUTES')
+}
+
+    stages {
+        stage('Build Backend'){
+            
+
+            steps {
+            withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {    
+
+                bat "docker build -f backend\\Dockerfile -t vitvizel/timeapp-jenkins-backend:1.0.${env.BUILD_NUMBER} ."
+                bat "docker login -u $user -p $pass"
+                bat "docker push vitvizel/timeapp-jenkins-backend:1.0.${env.BUILD_NUMBER}"
+            }
+
+        }
+           
+        }
+    }
+}
+
+/
