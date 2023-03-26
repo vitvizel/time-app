@@ -2,9 +2,9 @@ FROM amazonlinux:2 as installer
 
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 RUN yum update -y \
-  && yum install -y unzip \
-  && unzip awscliv2.zip \
-  && ./aws/install --bin-dir /aws-cli-bin/
+     && yum install -y unzip \
+     && unzip awscliv2.zip \
+     && ./aws/install --bin-dir /aws-cli-bin/
 
 RUN mkdir /snyk && cd /snyk \
     && curl https://static.snyk.io/cli/v1.666.0/snyk-linux -o snyk \
