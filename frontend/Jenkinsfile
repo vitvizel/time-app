@@ -28,12 +28,11 @@ pipeline {
     }
 
             post {
-                stage{'hello'
-                }
-            always {
-            deleteDir() /* clean up our workspace */
+                steps{
+                always {
+                deleteDir() /* clean up our workspace */
         }
-
+                }
     }
 }
 
