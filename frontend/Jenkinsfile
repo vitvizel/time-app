@@ -33,7 +33,7 @@ pipeline {
     
 
             post {
-                steps{
+                
                 always {
                 deleteDir() /* clean up our workspace */
         }
