@@ -18,6 +18,9 @@ pipeline {
             {    
 
                 bat "docker build -f frontend\\Dockerfile -t vitvizel/timeapp-jenkins-frontend:1.0.${env.BUILD_NUMBER} ."
+                
+        stage('Push Frontend')   
+            steps {     
                 bat "docker login -u $user -p $pass"
                 bat "docker push vitvizel/timeapp-jenkins-frontend:1.0.${env.BUILD_NUMBER}"
             }
