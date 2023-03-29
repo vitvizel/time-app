@@ -25,10 +25,11 @@ pipeline {
         }
            
         }
-
-       
+    }
 
             post {
+                stage{'hello'
+                }
             always {
             deleteDir() /* clean up our workspace */
         }
@@ -36,4 +37,3 @@ pipeline {
     }
 }
 
-}
