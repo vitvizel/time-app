@@ -14,7 +14,8 @@ pipeline {
             
 
             steps {
-            withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {    
+            withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) 
+            {    
 
                 bat "docker build -f frontend\\Dockerfile -t vitvizel/timeapp-jenkins-frontend:1.0.${env.BUILD_NUMBER} ."
                 bat "docker login -u $user -p $pass"
@@ -35,3 +36,4 @@ pipeline {
     }
 }
 
+}
