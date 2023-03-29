@@ -28,8 +28,8 @@ pipeline {
 
         stage('Cleanup the built Docker images from the disk')
 
-        post {
-        always {
+            post {
+            always {
             deleteDir() /* clean up our workspace */
         }
 
