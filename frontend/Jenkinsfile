@@ -1,5 +1,6 @@
 //Jenkinsfile Frontend (Declarative Pipeline)
-pipeline {
+pipeline 
+{
     agent any
 
     options {
@@ -10,19 +11,20 @@ pipeline {
 }
 
     stages {
-        stage('Build Frontend'){
+        stage('Build Frontend')
+        {
+           
+            steps 
+            {
             
-
-            steps {
-            //withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) 
-            //{    
-
                 bat "docker build -f frontend\\Dockerfile -t vitvizel/timeapp-jenkins-frontend:1.0.${env.BUILD_NUMBER} ."
-            //}
+          
             }
         }            
-        stage('Push Frontend')  { 
-            steps { 
+        stage('Push Frontend')  
+        { 
+            steps 
+            { 
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')])   
                 {  
                 bat "docker login -u $user -p $pass"
@@ -35,13 +37,14 @@ pipeline {
         }
     
 
-            post {
-                
-                always {
+            post 
+            {
+                always 
+                {
                 deleteDir() /* clean up our workspace */
-        }
                 }
-    }
+            }
+}
 
 
 
