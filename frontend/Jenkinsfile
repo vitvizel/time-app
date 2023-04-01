@@ -5,7 +5,8 @@
     agent{
         docker {
             image 'docker.io/vitvizel/agent:v1'
-            args '--user root -v /var/run/docker.sock:/var/run/docker'
+            args '-v \\.\pipe\docker_engine:\\.\pipe\docker_engine'
+
         }
     }
      
