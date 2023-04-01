@@ -28,7 +28,7 @@ pipeline
             
                 bat "docker build -f frontend\\Dockerfile -t vitvizel/timeapp-jenkins-frontend:1.0.${env.BUILD_NUMBER} ."
                    echo " The environment is ${params.Env}"
-                                   
+
             }
         }            
         stage('Push Frontend')  
@@ -54,7 +54,7 @@ pipeline
                 deleteDir() /* clean up our workspace */
                 }
             }
-}
+
 
 
 
