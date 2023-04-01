@@ -3,14 +3,7 @@
  pipeline 
 {
     agent any
-   // parameters {
-    //    choice {
-      //      name: ''
-       // }
      
-    //}
-    
-    
 
     options {
                 buildDiscarder(logRotator(daysToKeepStr: '30'))
