@@ -3,10 +3,11 @@
 pipeline 
 {
     agent any
-    parameters {
-        choice {
-            name: ''
-        }
+   // parameters {
+    //    choice {
+      //      name: ''
+       // }
+        echo " The environment is ${params.Env}"
     }
     
     
