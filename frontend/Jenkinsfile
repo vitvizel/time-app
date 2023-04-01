@@ -1,6 +1,6 @@
 //Jenkinsfile Frontend (Declarative Pipeline)
 
-pipeline 
+ pipeline 
 {
     agent any
    // parameters {
@@ -8,7 +8,7 @@ pipeline
       //      name: ''
        // }
      
-    }
+    //}
     
     
 
@@ -54,6 +54,7 @@ pipeline
                 deleteDir() /* clean up our workspace */
                 }
             }
+}
 
 
 
