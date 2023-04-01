@@ -1,4 +1,4 @@
-//Jenkinsfile Frontend (Declarative Pipeline)
+//Jenkinsfile Frontend Dev or Prod (Declarative Pipeline)
 
  pipeline 
 {
