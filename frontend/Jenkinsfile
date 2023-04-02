@@ -47,7 +47,8 @@
            
         }
         
-        stage('mail'){
+        stage('mail')
+        {
 
          
 
