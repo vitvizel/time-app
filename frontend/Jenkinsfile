@@ -47,16 +47,7 @@
            
         }
         
-        stage('mail')
-        {
-
-         
-
-         mail body: 'project build successful',
-                     from: 'vitvizel@gmail.com',
-                     subject: 'project time app frontend build successful',
-                     to: 'vitlik78@gmail.com'
-       }
+        
 
             post 
             {
