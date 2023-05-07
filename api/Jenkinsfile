@@ -20,6 +20,7 @@
             {
             
                 bat "docker build -f api\\${params.Env}.Dockerfile -t vitvizel/timeapp-jenkins-backend:${params.Env}.${env.BUILD_NUMBER} ."
+                bat "docker build -f api\\${params.Env}.Dockerfile -t vitvizel/timeapp-jenkins-backend:latest ."
                    echo " The environment is ${params.Env}"
 
             }
@@ -32,6 +33,7 @@
                 {  
                 bat "docker login -u $user -p $pass"
                 bat "docker push vitvizel/timeapp-jenkins-backend:${params.Env}.${env.BUILD_NUMBER}"
+                bat "docker push vitvizel/timeapp-jenkins-backend:latest"
                 }
             }
 
