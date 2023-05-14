@@ -2,25 +2,17 @@ version: '3'
 
 services:
   frontend:
-    build: ./frontend
+    image: vitvizel/timeapp-jenkins-frontend
     restart: always
     ports:
       - '3000:3000'
-    volumes:
-      - /app/node_modules
-      - ./frontend:/app
-    environment:
-      CHOKIDAR_USEPOLLING: "true" 
   api:
-    build: ./api
+    image: vitvizel/timeapp-jenkins-backend
     restart: always
     ports:
       - '5555:5000'
     depends_on:
       - mysql
-    volumes:
-      - /app/node_modules
-      - ./api:/app
     environment:
       MYSQL_HOST: mysql
       MYSQL_USER: root
@@ -34,7 +26,7 @@ services:
       MYSQL_ROOT_PASSWORD: password 
       MYSQL_DATABASE: time_db
     volumes:
-      - mysql_data:/var/lib/mysql
+      - mysql_data_pub:/var/lib/mysql
   adminer:
     image: adminer
     restart: always
@@ -42,4 +34,4 @@ services:
       - '8888:8080'
 
 volumes:
-  mysql_data:
+  mysql_data_pub:
