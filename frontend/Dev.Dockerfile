@@ -4,9 +4,7 @@ WORKDIR /app
 
 EXPOSE 3000
 
-CD /frontend
-
-COPY package*.json .
+COPY package*.json ./
 
 RUN npm install
 
