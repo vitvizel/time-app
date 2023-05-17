@@ -1,6 +1,6 @@
 FROM node:alpine
 
-WORKDIR /app
+WORKDIR time-app/app
 
 EXPOSE 3000
 
