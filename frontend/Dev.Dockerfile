@@ -1,8 +1,10 @@
 FROM node:alpine
 
-WORKDIR /frontend
+WORKDIR /app
 
 EXPOSE 3000
+
+CD /frontend
 
 COPY package*.json .
 
