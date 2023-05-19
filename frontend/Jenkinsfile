@@ -27,8 +27,8 @@
             steps 
             {
             
-                bat "docker build -f ${params.Env}.Dockerfile -t vitvizel/timeapp-jenkins-frontend:${params.Env}.${env.BUILD_NUMBER} ."
-                 bat "docker build -f ${params.Env}.Dockerfile -t vitvizel/timeapp-jenkins-frontend:latest ."
+                bat "docker build -f frontend//${params.Env}.Dockerfile -t vitvizel/timeapp-jenkins-frontend:${params.Env}.${env.BUILD_NUMBER} ."
+                 bat "docker build -f frontend//${params.Env}.Dockerfile -t vitvizel/timeapp-jenkins-frontend:latest ."
                    echo " The environment is ${params.Env}"
 
             }
