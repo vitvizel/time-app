@@ -8,7 +8,7 @@ COPY frontend/package*.json /.
 
 RUN npm install
 
-COPY . .
+COPY frontend/ .
 
 CMD ["npm", "run", "dev"]
 
