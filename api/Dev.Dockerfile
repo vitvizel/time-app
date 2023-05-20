@@ -8,6 +8,6 @@ COPY api/package*.json ./
 
 RUN npm install
 
-COPY . .
+COPY api/ .
 
 CMD [ "npm", "run", "dev" ]
