@@ -4,10 +4,10 @@ WORKDIR /app
 
 EXPOSE 5000
 
-COPY package*.json ./
+COPY api/package*.json ./
 
 RUN npm install
 
-COPY . .
+COPY api/ .
 
 CMD [ "npm", "start" ]
