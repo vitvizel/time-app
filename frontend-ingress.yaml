@@ -14,9 +14,10 @@ spec:
    
   rules:
    
-    
-   
-    -  http:
+
+    - host: time-app.info
+
+      http:
    
         paths:
    

@@ -32,7 +32,13 @@ spec:
               value: password
           image: mysql
           name: mysql
-          resources: {}
+          resources:
+           limits:
+               cpu: "1"
+               memory: "500Mi"
+           requests:
+               cpu: "0.1"
+               memory: "200Mi"
           volumeMounts:
             - mountPath: /var/lib/mysql
               name: mysql-data-pub

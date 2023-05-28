@@ -36,9 +36,22 @@ spec:
             - name: MYSQL_USER
               value: root
           image: vitvizel/timeapp-jenkins-backend
+          livenessProbe:
+             exec:
+               command:
+               - cat
+               - /app/README.md
+             initialDelaySeconds: 5
+             periodSeconds: 5
           name: api
           ports:
             - containerPort: 5000
-          resources: {}
+          resources:
+           limits:
+               cpu: "1"
+               memory: "200Mi"
+           requests:
+               cpu: "0.1"
+               memory: "100Mi"
       restartPolicy: Always
 status: {}
