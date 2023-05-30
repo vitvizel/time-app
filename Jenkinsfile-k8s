@@ -10,7 +10,7 @@
               spec: 
                 containers:
                 - name: jenkins-agent
-                  image: jenkins-agent:latest
+                  image: docker.io/jenkins-agent:latest
                   command:
                   - cat
                   tty: true
