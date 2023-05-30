@@ -10,7 +10,7 @@
               spec: 
                 containers:
                 - name: jenkins-agent
-                  image: docker.io/jenkins-agent:latest
+                  image: docker.io/bitnami/jenkins-agent:latest
                   command:
                   - cat
                   tty: true
