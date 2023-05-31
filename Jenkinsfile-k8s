@@ -14,7 +14,7 @@
                   command:
                   - cat
                   tty: true
-                  '''
+                 '''
         }
     }
 
