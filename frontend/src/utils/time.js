@@ -2,7 +2,7 @@ import moment from 'moment'
 
 function startInterval() {
   setInterval(() => {
-    this.currentTime = moment().format('HH:mm:ss')
+    this.currentTime = moment().format('DD:MM:YYYY:HH:mm:ss')
   }, 1000)
 }
 
