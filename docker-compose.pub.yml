@@ -7,7 +7,7 @@ services:
     ports:
       - '3000:3000'
   api:
-    image: vitvizel/time-app-api-dev: latest 
+    image: vitvizel/time-app-api-dev:latest 
     restart: always
     ports:
       - '5555:5000'
